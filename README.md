@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
 
+## Cómo iniciar proyecto
+
+ng new "nombre-proyecto"
+git config --local user.name
+git config --local user.email
+git config --local user.password
+git remote add origin https://github.com/luistermi/nombre-proyecto.git
+git push --force-with-lease origin master
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
