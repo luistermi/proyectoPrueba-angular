@@ -1,0 +1,26 @@
+a.nav-link > span{background-color: white;color:black;}
+header > #banner {position:absolute;z-index: 1; top:0;bottom: 0;left:0;right:0;}
+#fotofondo-banner {height:83%;width: 100%;}
+#fotopersonal-banner {position:absolute;z-index: 2; margin-top: -9%; margin-left: 9%;width:15%;}
+#principal{background-color: #0a226f;}
+@media (max-width: 768px) {
+h6{font-size:medium;}
+p{font-size:small;}
+button>span{font-size:small;}
+.link-papelera{margin-left: 15%;}
+}
+@media (min-width: 768px) {
+h6{font-size:large;}
+p{font-size:medium;}
+button>span{font-size:medium;}
+.link-papelera{margin-left: 8%;}
+}
+@media (min-width:576px) {
+    .login-btn{margin-top: -12%;}
+    
+}
+h6{text-align: center;}
+i{color:white;}
+.infoprofesional,#anios{text-align: center;}
+.educacion,#anio{text-align: center;}
+.acercade,#nomapeprof{text-align: center;}
