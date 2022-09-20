@@ -16,6 +16,7 @@ addeable = false;
 contadorAddeable: number[]= [];
 formacionAnio = "";
 formacionTitulo = "";
+visible=true;
 
 toEditable(){
   this.editable = true;
@@ -30,6 +31,7 @@ toNotEditable(){
   }
   this.formacionAnio = "";
   this.formacionTitulo = "";
+  this.visible=true;
 }
 
 clean(index: number): void {
@@ -39,5 +41,9 @@ clean(index: number): void {
 add(){
   this.addeable = true;
   this.contadorAddeable.push(1);
+}
+
+visibleOff(){
+this.visible=false;
 }
 }
