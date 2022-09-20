@@ -7,13 +7,13 @@ header > #banner {position:absolute;z-index: 1; top:0;bottom: 0;left:0;right:0;}
 h6{font-size:medium;}
 p{font-size:small;}
 button>span{font-size:small;}
-.link-papelera{margin-left: 15%;}
+.link-papelera, .link-add, .link-save{margin-left: 15%;}
 }
 @media (min-width: 768px) {
 h6{font-size:large;}
 p{font-size:medium;}
 button>span{font-size:medium;}
-.link-papelera{margin-left: 8%;}
+.link-papelera, .link-add, .link-save{margin-left: 8%;}
 }
 @media (min-width:576px) {
     .login-btn{margin-top: -12%;}
