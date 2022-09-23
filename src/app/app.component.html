@@ -2,14 +2,14 @@
 <header class="container-fluid">
   <div class="row">
       <nav class="fixed-top navbar navbar-expand-sm navbar-dark bg-black">
-          <div class="container-fluid d-flex align-items-center">               
+          <div class="container-fluid d-flex align-items-center">
               <a class="navbar-brand" href="">
                   <img src="../assets/Imagenes/Logo.jpg" alt="logo">
-                  <b>#YoProgramo</b> 
+                  <b>#YoProgramo</b>
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
-              </button>                 
+              </button>
               <div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
                   <div class="navbar-nav">
                       <a class="nav-link fa fa-twitter" href="https://twitter.com/luchoyvuelvo2" target="_blank"></a>
@@ -27,7 +27,8 @@
       </div>
   </div>
 </header>
-<main id="principal" class="container" style="margin-top:-13%;">
+<!-- <app-componente-de-prueba></app-componente-de-prueba> -->
+<main id="principal" class="container.fluid" style="margin-top:-13%;">
   <section id="acercade">
       <div class="row justify-content-center justify-content-sm-between align-items-center">
           <div class="col-7 col-sm-6 col-md-3 border border-3 border-black bg-secondary rounded">
@@ -39,7 +40,7 @@
                   <a href="#" class="link-papelera"><i class="fa fa-trash"></i></a>
                   <!-- <button type="button" class="btn btn-secondary btn-sm border border-3 border-black bg-secondary rounded"><i class="fa fa-pencil"></i></button>
                   <button type="button" class="btn btn-secondary btn-sm border border-3 border-black bg-secondary rounded" style="margin-left:2%;"><i class="fa fa-trash"></i></button> -->
-              </div>        
+              </div>
           </div>
       </div>
       <div class="row pt-2 justify-content-center justify-content-sm-around align-items-center">
@@ -60,7 +61,7 @@
               <div class="d-flex justify-content-end justify-content-sm-center align-items-center">
                   <a href="#"><i class="fa fa-pencil"></i></a>
                   <a href="#" class="link-papelera"><i class="fa fa-trash"></i></a>
-              </div>        
+              </div>
           </div>
       </div>
       <div class="row pt-2 justify-content-center justify-content-sm-around align-items-center">
@@ -89,19 +90,21 @@
       </div>
   </section>
   <section id="educacion" class="mt-5">
-      <div class="row justify-content-center justify-content-sm-between align-items-center">
-          <div class="col-7 col-sm-6 col-md-3 border border-3 border-black bg-secondary rounded">
+      <!-- <div class="row justify-content-center justify-content-sm-between align-items-center"> -->
+      <div class="row align-items-center">
+          <div class="col-7 col-sm-6 col-md-3 offset-md-1 border border-3 border-black bg-secondary rounded">
               <h6 class="fw-bold">Formación</h6>
           </div>
-          <div class="col-3">
+          <div class="col-3 offset-4 align-items-center">
               <div class="d-flex justify-content-center align-items-center ">
                   <!-- <button *ngIf="!editable" (click)="toEditable()" style="background-color: #0a226f;"><i class="fa fa-pencil"></i></button> -->
-                  <button *ngIf="!editable" (click)="toEditable()" class="bg-secondary"><b>Editar</b></button>
+
                   <button *ngIf="editable && !addeable" (click)="add()" class="link-add" style="background-color: #0a226f;"><i class="fa fa-plus"></i></button>
                   <!-- <button *ngIf="editable" (click)="clean()" class="link-papelera" style="background-color: #0a226f;"><i class="fa fa-trash"></i></button> -->
                   <button *ngIf="editable" (click)="toNotEditable()" class="link-save" style="background-color: #0a226f;"><i class="fa fa-floppy-o"></i></button>
                   <!-- <a (click)="clean()" href="#" class="link-papelera"><i class="fa fa-trash"></i></a> -->
-              </div>        
+                  <button *ngIf="!editable" (click)="toEditable()" class="bg-secondary rounded"><b>Editar</b></button>
+              </div>
           </div>
       </div>
       <div *ngFor="let formacion of formaciones; let i = index">
@@ -109,13 +112,15 @@
             <div *ngIf="!editable && (formacion.anio != ''||formacion.titulo != '')" class="col-4 col-sm-3 col-md-2 border border-3 border-black bg-secondary rounded">
                 <p  class="educacion" id="anio">{{formacion.anio}}</p>
             </div>
-            <div *ngIf="editable" class="col-4 col-sm-3 col-md-2 border border-3 border-black bg-secondary rounded">
+            <!-- <div *ngIf="editable" class="col-4 col-sm-3 col-md-2 border border-3 border-black bg-secondary rounded"> -->
+            <div *ngIf="editable" class="col-4 col-sm-3 col-md-2">
                 <input type="text" [(ngModel)] = "formacion.anio" class="bg-secondary" style="width: 100%;">
             </div>
             <div *ngIf="!editable && (formacion.anio != ''||formacion.titulo != '')" class="col-6 col-sm-6 col-md-8 border border-3 border-black bg-secondary rounded">
                 <p>{{formacion.titulo}}</p>
             </div>
-            <div *ngIf="editable" class="col-6 col-sm-6 col-md-8 border border-3 border-black bg-secondary rounded">
+            <!-- <div *ngIf="editable" class="col-6 col-sm-6 col-md-8 border border-3 border-black bg-secondary rounded"> -->
+            <div *ngIf="editable" class="col-6 col-sm-6 col-md-8">
                 <input type="text" [(ngModel)] = "formacion.titulo" class="bg-secondary" style="width: 100%;">
             </div>
             <div *ngIf="editable" class="col-1" style="background-color:#0a226f">
@@ -126,10 +131,12 @@
       </div>
       <div *ngIf="addeable">
         <div *ngFor= "let contador of contadorAddeable" class="row pt-2 justify-content-center justify-content-sm-around align-items-center">
-            <div *ngIf="editable && visible" class="col-4 col-sm-3 col-md-2 border border-3 border-black bg-secondary rounded">
+            <!-- <div *ngIf="editable && visible" class="col-4 col-sm-3 col-md-2 border border-3 border-black bg-secondary rounded"> -->
+            <div *ngIf="editable && visible" class="col-4 col-sm-3 col-md-2">
                 <input *ngIf="editable" type="text" [(ngModel)]="formacionAnio" class="bg-secondary" style="width: 100%;">
             </div>
-            <div *ngIf="editable && visible" class="col-6 col-sm-6 col-md-8 border border-3 border-black bg-secondary rounded">
+            <!-- <div *ngIf="editable && visible" class="col-6 col-sm-6 col-md-8 border border-3 border-black bg-secondary rounded"> -->
+            <div *ngIf="editable && visible" class="col-6 col-sm-6 col-md-8">
                 <input *ngIf="editable" type="text" [(ngModel)]="formacionTitulo" class="bg-secondary" style="width: 100%;">
             </div>
             <div *ngIf="editable && visible" class="col-1" style="background-color:#0a226f">
@@ -163,7 +170,7 @@
               <div class="d-flex justify-content-end justify-content-sm-center align-items-center">
                   <a href="#"><i class="fa fa-pencil"></i></a>
                   <a href="#" class="link-papelera"><i class="fa fa-trash"></i></a>
-              </div>        
+              </div>
           </div>
       </div>
   </section>
@@ -176,7 +183,7 @@
               <div class="d-flex justify-content-end justify-content-sm-center align-items-center">
                   <a href="#"><i class="fa fa-pencil"></i></a>
                   <a href="#" class="link-papelera"><i class="fa fa-trash"></i></a>
-              </div>        
+              </div>
           </div>
       </div>
       <div class="row pt-2 justify-content-center align-items-center">
